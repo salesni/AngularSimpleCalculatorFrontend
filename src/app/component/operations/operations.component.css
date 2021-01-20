@@ -1,0 +1,14 @@
+.container{
+    margin-top: 50px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.op{
+    width: 150px !important;
+    margin-bottom: 5px !important;
+}
+
+.op>img{
+    filter: invert(100) !important;
+}

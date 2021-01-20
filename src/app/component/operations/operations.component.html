@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="jumbotron" style="width: 1200px; margin-left: auto; margin-right: auto; margin-top: 50px;">
+    <div class="py-5 text-center">
+        <h2>Select an operation</h2>
+        <p class="lead">Below in the left side you will see the different kind of operations you can do. On the right side you can select how many elements do you need for your operation</p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <div class="btn-group-vertical" style="margin-left: 30%;">
+                <button type="button" (click)="setOperation(1)"class="btn btn-secondary op"><img src="../../assets/img/mas.png" height="60" width="60"></button>
+                <button type="button" (click)="setOperation(2)" class="btn btn-secondary op"><img src="../../assets/img/menos.png" height="60" width="60"></button>
+                <button type="button" (click)="setOperation(4)" class="btn btn-secondary op"><img src="../../assets/img/multi.png" height="60" width="60"></button>
+                <button type="button" (click)="setOperation(3)"class="btn btn-secondary op"><img src="../../assets/img/division.png" height="60" width="60"></button>
+                <button type="button" (click)="setOperation(5)"class="btn btn-secondary op"><img src="../../assets/img/raiz.png" height="60" width="60"></button>
+                <button type="button" (click)="setOperation(6)"class="btn btn-secondary op"><img src="../../assets/img/logaritmo.png" height="40" width="90"></button>
+                <button type="button" (click)="setOperation(7)" class="btn btn-secondary op"><img src="../../assets/img/ex.png" height="50" width="60"></button>
+                <button type="button" (click)="setOperation(8)" class="btn btn-secondary op"><img src="../../assets/img/ab.png" height="60" width="60"></button>
+            </div>
+        </div>
+        <div class="col-7 offset-1">
+            <label for="">How many numbers do you need for your operation?</label><br>
+            <div class="form-inline my-2 my-lg-0">
+                <input #number class="form-control mr-sm-2" type="number" placeholder="#" style="width: 75%;">
+                <button (click)="array(number.value)" class="btn btn-success my-2 my-sm-0">Accept</button>
+            </div>
+            <div *ngIf="!mayor; else manyNumbers" style="margin-top: 10px; width: 500px;">
+                <input #input type="number" class="form-control" name="" id="input{{ i }}" *ngFor = "let item of items; let i =index" placeholder="input{{ i }}"
+                style="margin-bottom: 10px; margin-right: 15px; width: 150px; display: inline;"> 
+            </div>
+            <div *ngIf="operation==8 && items.length>0">
+                <h3 >base ^</h3>
+                <input #base type="number" class="form-control" name="" id="base"  placeholder="base">
+            </div>
+            <div *ngIf="items.length>0;">
+                <button  (click)="calcular()" class="btn btn-success my-2 my-sm-0" >Calculate</button>
+            </div>
+            <ng-template #manyNumbers class="alert alert-danger" role="alert">
+                NO MORE THAN TWENTY NUMBERS :v
+            </ng-template>
+            
+            <div *ngIf= "error"class="alert alert-danger" role="alert">
+                {{operationString}}
+            </div>
+            <div  *ngIf= "!error && first" class="alert alert-primary" role="alert">
+                {{operationString}}
+              </div>
+            <div  *ngIf= "found" class="alert alert-warning" role="alert">
+                THIS OPERATION WAS ALREADY SUBMITED IT WOULD NOT STORED AGAIN :v
+             </div>
+            
+        </div>
+    </div>
+</div>

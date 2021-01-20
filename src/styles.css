@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(https://img.genial.ly/5eda747a0bbf3160aaec7f17/a16046e5-b8c6-4928-ad62-7eed69e7ed10.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+a{
+    cursor: pointer;
+}
