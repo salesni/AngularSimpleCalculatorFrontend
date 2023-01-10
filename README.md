@@ -1,6 +1,7 @@
-# AppCalculadora
+# Angular Simple Calculator Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+This is a small project to serve as a frontend to a calculator application created using Springboot microservices. 
 
 ## Development server
 
